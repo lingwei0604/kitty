@@ -30,6 +30,6 @@ rule:
   name: rule
   etcd:
     addrs:
-      - 39.105.35.14:80
+      -
   dmpAddr:
 wechatcallback: *app
