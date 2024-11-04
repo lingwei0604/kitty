@@ -5,7 +5,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/json"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"

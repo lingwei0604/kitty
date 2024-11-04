@@ -4,22 +4,22 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/handlers"
-	"git.yingzhongshare.com/mkt/kitty/app/listener"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/event"
-	kittyhttp "git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	kclient "git.yingzhongshare.com/mkt/kitty/pkg/kkafka/client"
-	"git.yingzhongshare.com/mkt/kitty/pkg/otredis"
-	"git.yingzhongshare.com/mkt/kitty/pkg/ots3"
-	"git.yingzhongshare.com/mkt/kitty/pkg/sms"
-	"git.yingzhongshare.com/mkt/kitty/pkg/wechat"
 	"github.com/go-kit/kit/log"
 	"github.com/go-redis/redis/v8"
 	"github.com/google/wire"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/handlers"
+	"github.com/lingwei0604/kitty/app/listener"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/event"
+	kittyhttp "github.com/lingwei0604/kitty/pkg/khttp"
+	kclient "github.com/lingwei0604/kitty/pkg/kkafka/client"
+	"github.com/lingwei0604/kitty/pkg/otredis"
+	"github.com/lingwei0604/kitty/pkg/ots3"
+	"github.com/lingwei0604/kitty/pkg/sms"
+	"github.com/lingwei0604/kitty/pkg/wechat"
 )
 
 var DbSet = wire.NewSet(

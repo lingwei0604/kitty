@@ -3,10 +3,10 @@ package entity
 import (
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
 	"github.com/fatih/structs"
 	"github.com/hashicorp/go-multierror"
 	"github.com/knadh/koanf"
+	"github.com/lingwei0604/kitty/rule/dto"
 	"github.com/xeipuuv/gojsonschema"
 )
 

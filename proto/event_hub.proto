@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package event_hub.v1;
-option go_package = "git.yingzhongshare.com/mkt/kitty/proto;kitty";
+option go_package = "github.com/lingwei0604/kitty/proto;kitty";
 
 enum Platform {
   PLATFORM_UNKNOWN = 0;

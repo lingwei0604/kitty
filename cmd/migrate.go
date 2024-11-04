@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/config"
 	"github.com/spf13/cobra"
 	"os"
 )

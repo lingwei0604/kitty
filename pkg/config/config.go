@@ -3,9 +3,9 @@ package config
 import (
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	corecontract "github.com/DoNewsCode/core/contract"
 	"github.com/knadh/koanf"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 type Env string

@@ -30,6 +30,6 @@ rule:
   name: rule
   etcd:
     addrs:
-      - etcd-headless.allin:2379
+      - 39.105.35.14:80
   dmpAddr:
 wechatcallback: *app

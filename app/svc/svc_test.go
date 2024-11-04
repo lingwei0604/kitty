@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/gogo/protobuf/jsonpb"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 type GenericReply struct {

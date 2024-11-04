@@ -5,9 +5,9 @@ import (
 	"os"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/app/module"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	kittyjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
+	"github.com/lingwei0604/kitty/app/module"
+	"github.com/lingwei0604/kitty/app/repository"
+	kittyjwt "github.com/lingwei0604/kitty/pkg/kjwt"
 	"github.com/opentracing/opentracing-go"
 	"github.com/spf13/cobra"
 	vegeta "github.com/tsenart/vegeta/v12/lib"

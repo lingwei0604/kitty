@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/pkg/errors"
 )
 

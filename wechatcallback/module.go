@@ -1,9 +1,9 @@
 package wechatcallback
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	"github.com/go-kit/kit/log"
 	"github.com/gorilla/mux"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 type Module struct {

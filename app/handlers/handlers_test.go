@@ -13,16 +13,16 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/handlers/mocks"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	mc "git.yingzhongshare.com/mkt/kitty/pkg/contract/mocks"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	jwt2 "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
-	"git.yingzhongshare.com/mkt/kitty/pkg/wechat"
-	wm "git.yingzhongshare.com/mkt/kitty/pkg/wechat/mocks"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/handlers/mocks"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	mc "github.com/lingwei0604/kitty/pkg/contract/mocks"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	jwt2 "github.com/lingwei0604/kitty/pkg/kjwt"
+	"github.com/lingwei0604/kitty/pkg/wechat"
+	wm "github.com/lingwei0604/kitty/pkg/wechat/mocks"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 func getConf() contract.ConfigReader {

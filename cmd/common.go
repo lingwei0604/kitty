@@ -3,15 +3,15 @@ package cmd
 import (
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/container"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	kittyhttp "git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	"git.yingzhongshare.com/mkt/kitty/pkg/klog"
-	"git.yingzhongshare.com/mkt/kitty/rule/client"
-	rule "git.yingzhongshare.com/mkt/kitty/rule/module"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/container"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	kittyhttp "github.com/lingwei0604/kitty/pkg/khttp"
+	"github.com/lingwei0604/kitty/pkg/klog"
+	"github.com/lingwei0604/kitty/rule/client"
+	rule "github.com/lingwei0604/kitty/rule/module"
 )
 
 var moduleContainer container.ModuleContainer

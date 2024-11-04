@@ -8,13 +8,13 @@ import (
 	"strings"
 	"sync"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/entity"
-	"git.yingzhongshare.com/mkt/kitty/rule/module"
-	"git.yingzhongshare.com/mkt/kitty/rule/msg"
-	repository2 "git.yingzhongshare.com/mkt/kitty/rule/repository"
 	"github.com/DoNewsCode/core/contract"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
+	"github.com/lingwei0604/kitty/rule/entity"
+	"github.com/lingwei0604/kitty/rule/module"
+	"github.com/lingwei0604/kitty/rule/msg"
+	repository2 "github.com/lingwei0604/kitty/rule/repository"
 	"github.com/pkg/errors"
 	"go.etcd.io/etcd/client/v3"
 )

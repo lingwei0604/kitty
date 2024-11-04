@@ -3,10 +3,10 @@ package svc
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kkafka"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-kit/kit/endpoint"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kkafka"
+	pb "github.com/lingwei0604/kitty/proto"
 	"github.com/segmentio/kafka-go"
 )
 

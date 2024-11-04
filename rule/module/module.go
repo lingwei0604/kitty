@@ -2,16 +2,16 @@ package module
 
 import (
 	"context"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	"git.yingzhongshare.com/mkt/kitty/pkg/khttp"
 	"github.com/go-kit/kit/auth/jwt"
 	"github.com/go-kit/kit/tracing/opentracing"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	"github.com/lingwei0604/kitty/pkg/khttp"
 	"net/http"
 	"strconv"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/rule/service"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/rule/service"
 
 	"github.com/go-kit/kit/log"
 	httptransport "github.com/go-kit/kit/transport/http"

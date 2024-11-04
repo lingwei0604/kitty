@@ -3,7 +3,7 @@ package client
 import (
 	"testing"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
+	"github.com/lingwei0604/kitty/rule/dto"
 	"github.com/stretchr/testify/assert"
 )
 

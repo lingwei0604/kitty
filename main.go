@@ -6,7 +6,7 @@
 package main
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/cmd"
+	"github.com/lingwei0604/kitty/cmd"
 )
 
 func main() {

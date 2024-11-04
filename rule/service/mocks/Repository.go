@@ -6,7 +6,7 @@ import (
 	context "context"
 	io "io"
 
-	entity "git.yingzhongshare.com/mkt/kitty/rule/entity"
+	entity "github.com/lingwei0604/kitty/rule/entity"
 
 	mock "github.com/stretchr/testify/mock"
 )

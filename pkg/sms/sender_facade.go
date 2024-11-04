@@ -3,8 +3,8 @@ package sms
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/pkg/errors"
 )
 

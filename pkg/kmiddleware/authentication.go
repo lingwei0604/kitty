@@ -4,11 +4,11 @@ import (
 	"context"
 	"errors"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	kittyjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
 	"github.com/go-kit/kit/auth/jwt"
 	"github.com/go-kit/kit/endpoint"
 	stdjwt "github.com/golang-jwt/jwt/v4"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	kittyjwt "github.com/lingwei0604/kitty/pkg/kjwt"
 )
 
 type Claim struct {

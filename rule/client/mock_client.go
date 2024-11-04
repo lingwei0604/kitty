@@ -1,11 +1,11 @@
 package client
 
 import (
-	kconf "git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
 	"github.com/knadh/koanf"
 	"github.com/knadh/koanf/providers/confmap"
+	kconf "github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/rule/dto"
 )
 
 // MockRule 是 ofRule 的测试替身。

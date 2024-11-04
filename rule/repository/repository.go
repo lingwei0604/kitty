@@ -10,13 +10,13 @@ import (
 	"strings"
 	"sync"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/entity"
-	"git.yingzhongshare.com/mkt/kitty/rule/msg"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	"github.com/knadh/koanf"
 	kyaml "github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/rawbytes"
+	"github.com/lingwei0604/kitty/rule/entity"
+	"github.com/lingwei0604/kitty/rule/msg"
 	"github.com/pkg/errors"
 	"go.etcd.io/etcd/client/v3"
 )

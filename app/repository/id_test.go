@@ -9,7 +9,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/stretchr/testify/assert"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/entity"
 )
 
 func TestPreallocate(t *testing.T) {

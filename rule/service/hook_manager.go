@@ -7,10 +7,10 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	"github.com/knadh/koanf"
 	kyaml "github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/rawbytes"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/pkg/errors"
 )
 

@@ -4,21 +4,21 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/module"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/event"
-	"git.yingzhongshare.com/mkt/kitty/pkg/invitecode"
-	kittyhttp "git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	kclient "git.yingzhongshare.com/mkt/kitty/pkg/kkafka/client"
-	"git.yingzhongshare.com/mkt/kitty/pkg/ots3"
-	"git.yingzhongshare.com/mkt/kitty/share/handlers"
-	"git.yingzhongshare.com/mkt/kitty/share/internal"
-	"git.yingzhongshare.com/mkt/kitty/share/listener"
 	"github.com/go-kit/kit/log"
 	"github.com/google/wire"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/module"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/event"
+	"github.com/lingwei0604/kitty/pkg/invitecode"
+	kittyhttp "github.com/lingwei0604/kitty/pkg/khttp"
+	kclient "github.com/lingwei0604/kitty/pkg/kkafka/client"
+	"github.com/lingwei0604/kitty/pkg/ots3"
+	"github.com/lingwei0604/kitty/share/handlers"
+	"github.com/lingwei0604/kitty/share/internal"
+	"github.com/lingwei0604/kitty/share/listener"
 )
 
 var ShareServiceSet = wire.NewSet(

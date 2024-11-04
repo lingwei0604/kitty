@@ -9,15 +9,15 @@ import (
 	"io"
 	"strings"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
-	"git.yingzhongshare.com/mkt/kitty/rule/entity"
-	"git.yingzhongshare.com/mkt/kitty/rule/msg"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	"github.com/go-redis/redis/v8"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	pb "github.com/lingwei0604/kitty/proto"
+	"github.com/lingwei0604/kitty/rule/dto"
+	"github.com/lingwei0604/kitty/rule/entity"
+	"github.com/lingwei0604/kitty/rule/msg"
 	"github.com/pkg/errors"
 )
 

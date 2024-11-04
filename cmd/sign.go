@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	kittyjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
 	"github.com/golang-jwt/jwt/v4"
+	kittyjwt "github.com/lingwei0604/kitty/pkg/kjwt"
 	"github.com/spf13/cobra"
 )
 

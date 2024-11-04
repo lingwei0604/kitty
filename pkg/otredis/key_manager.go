@@ -1,7 +1,7 @@
 package otredis
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"strings"
 )
 

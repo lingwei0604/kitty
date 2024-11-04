@@ -4,13 +4,13 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/app/module"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/rule/service"
 	"github.com/DoNewsCode/core/clihttp"
 	"github.com/go-kit/kit/log"
 	"github.com/google/wire"
+	"github.com/lingwei0604/kitty/app/module"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/rule/service"
 )
 
 var serviceSet = wire.NewSet(

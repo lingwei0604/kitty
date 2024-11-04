@@ -9,12 +9,12 @@ import (
 	"io"
 	"net/http"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/msg"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
 	"github.com/go-kit/log"
 	"github.com/gorilla/mux"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/msg"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/kerr"
 	"github.com/pkg/errors"
 )
 

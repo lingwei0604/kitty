@@ -3,9 +3,9 @@ package repository
 import (
 	"context"
 	"flag"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/otredis"
 	"github.com/go-redis/redis/v8"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/otredis"
 	"testing"
 	"time"
 )

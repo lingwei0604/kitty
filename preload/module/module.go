@@ -1,14 +1,14 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	"git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	"git.yingzhongshare.com/mkt/kitty/preload/svc"
-	kitty "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-kit/kit/log"
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	"github.com/lingwei0604/kitty/pkg/khttp"
+	"github.com/lingwei0604/kitty/preload/svc"
+	kitty "github.com/lingwei0604/kitty/proto"
 	"net/http"
 )
 

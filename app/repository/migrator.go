@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	"github.com/go-gormigrate/gormigrate/v2"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"gorm.io/gorm"
 )
 

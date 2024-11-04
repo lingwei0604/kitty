@@ -1,9 +1,9 @@
 package internal
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 type InvitationManagerFactory struct {

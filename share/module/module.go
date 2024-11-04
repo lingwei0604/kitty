@@ -5,12 +5,12 @@ import (
 	"net/http"
 
 	//mw "gitee.com/tagtic/go-middleware/http/middleware"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kkafka"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-kit/kit/log"
 	"github.com/gorilla/mux"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kkafka"
+	pb "github.com/lingwei0604/kitty/proto"
 	"github.com/oklog/run"
 	"google.golang.org/grpc"
 )

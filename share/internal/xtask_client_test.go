@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"testing"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract/mocks"
 	"github.com/go-kit/kit/auth/jwt"
+	"github.com/lingwei0604/kitty/pkg/contract/mocks"
 	"github.com/stretchr/testify/assert"
 )
 

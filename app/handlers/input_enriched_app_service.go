@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"context"
-	"git.yingzhongshare.com/mkt/kitty/app/msg"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
+	"github.com/lingwei0604/kitty/app/msg"
+	"github.com/lingwei0604/kitty/pkg/kerr"
 	"github.com/pkg/errors"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	pb "github.com/lingwei0604/kitty/proto"
 	stdtracing "github.com/opentracing/opentracing-go"
 )
 

@@ -3,7 +3,7 @@ package config
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 var TenantKey = struct{}{}

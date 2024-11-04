@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/otredis"
 	"github.com/go-redis/redis/v8"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/otredis"
 
 	"time"
 )

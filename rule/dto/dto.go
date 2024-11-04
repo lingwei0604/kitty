@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	jwt2 "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-redis/redis/v8"
+	"github.com/lingwei0604/kitty/pkg/config"
+	jwt2 "github.com/lingwei0604/kitty/pkg/kjwt"
+	pb "github.com/lingwei0604/kitty/proto"
 	"github.com/spf13/cast"
 )
 

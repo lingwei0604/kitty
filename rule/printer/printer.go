@@ -3,8 +3,8 @@ package printer
 import (
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/client"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
+	"github.com/lingwei0604/kitty/rule/client"
+	"github.com/lingwei0604/kitty/rule/dto"
 )
 
 type Printer struct {

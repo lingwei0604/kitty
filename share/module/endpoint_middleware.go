@@ -1,11 +1,11 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kmiddleware"
-	"git.yingzhongshare.com/mkt/kitty/share/svc"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/metrics"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kmiddleware"
+	"github.com/lingwei0604/kitty/share/svc"
 	"github.com/opentracing/opentracing-go"
 )
 

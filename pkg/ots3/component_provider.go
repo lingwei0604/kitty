@@ -2,7 +2,7 @@ package ots3
 
 import (
 	"fmt"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"net/url"
 )
 

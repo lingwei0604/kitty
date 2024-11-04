@@ -3,10 +3,10 @@ package kmiddleware
 import (
 	"context"
 	"fmt"
-	"git.yingzhongshare.com/mkt/kitty/pkg/klog"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
+	"github.com/lingwei0604/kitty/pkg/klog"
 	"github.com/pkg/errors"
 )
 

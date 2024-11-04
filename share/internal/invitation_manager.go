@@ -12,9 +12,9 @@ import (
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	jwt2 "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	jwt2 "github.com/lingwei0604/kitty/pkg/kjwt"
 	"github.com/pkg/errors"
 	"github.com/rs/xid"
 	"gorm.io/gorm"

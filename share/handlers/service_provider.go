@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	code "git.yingzhongshare.com/mkt/kitty/pkg/invitecode"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	code "github.com/lingwei0604/kitty/pkg/invitecode"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 // NewService returns a naïve, stateless implementation of Service.

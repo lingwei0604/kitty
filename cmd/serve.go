@@ -13,9 +13,9 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 
-	kittyhttp "git.yingzhongshare.com/mkt/kitty/pkg/khttp"
 	"github.com/go-kit/kit/log/level"
 	"github.com/gorilla/mux"
+	kittyhttp "github.com/lingwei0604/kitty/pkg/khttp"
 	"github.com/oklog/run"
 	"github.com/robfig/cron/v3"
 	"github.com/spf13/cobra"

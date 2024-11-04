@@ -21,7 +21,7 @@ import (
 	"github.com/pkg/errors"
 
 	// This service
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 var (

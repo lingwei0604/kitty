@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
 	"github.com/antonmedv/expr"
+	"github.com/lingwei0604/kitty/rule/dto"
 	"github.com/pkg/errors"
 )
 

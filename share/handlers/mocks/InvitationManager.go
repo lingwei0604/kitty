@@ -5,11 +5,11 @@ package mocks
 import (
 	context "context"
 
-	entity "git.yingzhongshare.com/mkt/kitty/app/entity"
+	entity "github.com/lingwei0604/kitty/app/entity"
 
-	internal "git.yingzhongshare.com/mkt/kitty/share/internal"
+	internal "github.com/lingwei0604/kitty/share/internal"
 
-	kjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
+	kjwt "github.com/lingwei0604/kitty/pkg/kjwt"
 
 	mock "github.com/stretchr/testify/mock"
 )

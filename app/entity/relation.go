@@ -3,7 +3,7 @@ package entity
 import (
 	"errors"
 
-	"git.yingzhongshare.com/mkt/kitty/app/msg"
+	"github.com/lingwei0604/kitty/app/msg"
 	"gorm.io/gorm"
 )
 

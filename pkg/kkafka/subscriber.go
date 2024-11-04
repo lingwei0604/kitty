@@ -3,10 +3,10 @@ package kkafka
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/kmiddleware"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/transport"
+	"github.com/lingwei0604/kitty/pkg/kmiddleware"
 	"github.com/segmentio/kafka-go"
 )
 

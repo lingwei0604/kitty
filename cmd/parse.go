@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	jwt2 "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
 	"github.com/go-kit/kit/log/level"
 	"github.com/golang-jwt/jwt/v4"
+	jwt2 "github.com/lingwei0604/kitty/pkg/kjwt"
 	"github.com/spf13/cobra"
 )
 

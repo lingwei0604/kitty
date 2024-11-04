@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/pkg/otgorm"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/pkg/otgorm"
 	"github.com/rs/xid"
 	"gorm.io/gorm"
 )

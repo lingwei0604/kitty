@@ -6,14 +6,14 @@ import (
 	"errors"
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kmiddleware"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
-	"git.yingzhongshare.com/mkt/kitty/rule/entity"
-	"git.yingzhongshare.com/mkt/kitty/rule/service"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/metrics"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kmiddleware"
+	"github.com/lingwei0604/kitty/rule/dto"
+	"github.com/lingwei0604/kitty/rule/entity"
+	"github.com/lingwei0604/kitty/rule/service"
 )
 
 type GenericResponse struct {

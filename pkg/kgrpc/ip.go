@@ -3,8 +3,8 @@ package kgrpc
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	grpctransport "github.com/go-kit/kit/transport/grpc"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
 )

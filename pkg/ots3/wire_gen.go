@@ -8,8 +8,8 @@ package ots3
 
 import (
 	"github.com/go-kit/log"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"net/url"
 )
 

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
 	httptransport "github.com/go-kit/kit/transport/http"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 func IpToContext() httptransport.RequestFunc {

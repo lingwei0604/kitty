@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 type Evt struct {

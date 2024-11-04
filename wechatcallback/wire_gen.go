@@ -9,13 +9,13 @@ package wechatcallback
 import (
 	"github.com/go-kit/log"
 	"github.com/google/wire"
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/handlers"
-	"git.yingzhongshare.com/mkt/kitty/app/module"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	"git.yingzhongshare.com/mkt/kitty/pkg/ots3"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/handlers"
+	"github.com/lingwei0604/kitty/app/module"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/khttp"
+	"github.com/lingwei0604/kitty/pkg/ots3"
 )
 
 // Injectors from wire.go:

@@ -3,11 +3,11 @@ package kmiddleware
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	kittyjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
 	"github.com/go-kit/kit/auth/jwt"
 	"github.com/go-kit/kit/endpoint"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	kittyjwt "github.com/lingwei0604/kitty/pkg/kjwt"
 )
 
 func NewConfigMiddleware() endpoint.Middleware {

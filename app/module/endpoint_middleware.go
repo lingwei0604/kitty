@@ -3,14 +3,14 @@ package module
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/app/svc"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kmiddleware"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-kit/kit/auth/jwt"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/metrics"
+	"github.com/lingwei0604/kitty/app/svc"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/kmiddleware"
+	pb "github.com/lingwei0604/kitty/proto"
 	"github.com/opentracing/opentracing-go"
 )
 

@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"strings"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	"github.com/lingwei0604/kitty/rule/dto"
 	"github.com/pkg/errors"
 )
 

@@ -7,7 +7,7 @@ import (
 
 	clause "gorm.io/gorm/clause"
 
-	entity "git.yingzhongshare.com/mkt/kitty/app/entity"
+	entity "github.com/lingwei0604/kitty/app/entity"
 
 	mock "github.com/stretchr/testify/mock"
 

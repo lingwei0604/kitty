@@ -12,13 +12,13 @@ import (
 	"reflect"
 	"testing"
 
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
-	"git.yingzhongshare.com/mkt/kitty/rule/entity"
-	"git.yingzhongshare.com/mkt/kitty/rule/service/mocks"
 	"github.com/go-kit/kit/log"
 	"github.com/go-redis/redis/v8"
 	"github.com/go-redis/redismock/v8"
+	pb "github.com/lingwei0604/kitty/proto"
+	"github.com/lingwei0604/kitty/rule/dto"
+	"github.com/lingwei0604/kitty/rule/entity"
+	"github.com/lingwei0604/kitty/rule/service/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

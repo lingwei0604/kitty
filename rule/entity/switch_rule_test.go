@@ -3,10 +3,10 @@ package entity
 import (
 	"testing"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
 	"github.com/knadh/koanf"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/rawbytes"
+	"github.com/lingwei0604/kitty/rule/dto"
 	"github.com/stretchr/testify/assert"
 )
 

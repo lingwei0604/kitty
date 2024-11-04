@@ -2,8 +2,8 @@ package kmiddleware
 
 import (
 	"context"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
 	"github.com/go-kit/kit/endpoint"
+	"github.com/lingwei0604/kitty/pkg/kerr"
 	"github.com/pkg/errors"
 	"testing"
 )

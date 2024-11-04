@@ -2,11 +2,11 @@ package internal
 
 import (
 	"context"
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	jwt2 "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
+	"github.com/lingwei0604/kitty/app/entity"
+	jwt2 "github.com/lingwei0604/kitty/pkg/kjwt"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/pkg/errors"
 )
 

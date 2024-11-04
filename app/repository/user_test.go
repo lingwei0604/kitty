@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/entity"
 	"github.com/pkg/errors"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/assert"

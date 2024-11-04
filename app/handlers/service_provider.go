@@ -1,10 +1,10 @@
 package handlers
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/wechat"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/go-kit/kit/log"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/wechat"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 func NewAppService(

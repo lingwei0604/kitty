@@ -6,17 +6,17 @@ import (
 	"context"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/event"
-	shareevent "git.yingzhongshare.com/mkt/kitty/share/event"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/event"
+	shareevent "github.com/lingwei0604/kitty/share/event"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/msg"
-	token "git.yingzhongshare.com/mkt/kitty/pkg/invitecode"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kerr"
-	kittyjwt "git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
-	"git.yingzhongshare.com/mkt/kitty/share/internal"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/msg"
+	token "github.com/lingwei0604/kitty/pkg/invitecode"
+	"github.com/lingwei0604/kitty/pkg/kerr"
+	kittyjwt "github.com/lingwei0604/kitty/pkg/kjwt"
+	pb "github.com/lingwei0604/kitty/proto"
+	"github.com/lingwei0604/kitty/share/internal"
 	"github.com/pkg/errors"
 )
 

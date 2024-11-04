@@ -2,10 +2,10 @@ package listener
 
 import (
 	"context"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/event"
-	kitty "git.yingzhongshare.com/mkt/kitty/proto"
-	shareevent "git.yingzhongshare.com/mkt/kitty/share/event"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/event"
+	kitty "github.com/lingwei0604/kitty/proto"
+	shareevent "github.com/lingwei0604/kitty/share/event"
 )
 
 type InvitationCodeBus interface {

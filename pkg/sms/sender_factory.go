@@ -4,7 +4,7 @@ import (
 	"strings"
 	"sync"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 )
 
 type SenderFactory struct {

@@ -1,14 +1,14 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	kitty_log "git.yingzhongshare.com/mkt/kitty/pkg/klog"
 	"github.com/go-kit/kit/log"
 	"github.com/knadh/koanf"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/providers/rawbytes"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	kitty_log "github.com/lingwei0604/kitty/pkg/klog"
 )
 
 func ProvideConfig(cfgFile string) (contract.ConfigReader, error) {

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	core "git.yingzhongshare.com/mkt/kitty/core/module"
+	core "github.com/lingwei0604/kitty/core/module"
 	"github.com/spf13/cobra"
 )
 

@@ -1,9 +1,9 @@
 package client
 
 import (
-	kconf "git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
+	kconf "github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/rule/dto"
 )
 
 type Tenanter interface {

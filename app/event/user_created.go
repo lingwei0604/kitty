@@ -1,6 +1,6 @@
 package event
 
-import pb "git.yingzhongshare.com/mkt/kitty/proto"
+import pb "github.com/lingwei0604/kitty/proto"
 
 type UserCreated struct {
 	*pb.UserInfoDetail

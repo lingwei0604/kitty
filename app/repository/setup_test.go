@@ -9,13 +9,13 @@ import (
 	"testing"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	mc "git.yingzhongshare.com/mkt/kitty/pkg/contract/mocks"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	mc "github.com/lingwei0604/kitty/pkg/contract/mocks"
 	"gorm.io/gorm/logger"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
 	"github.com/go-gormigrate/gormigrate/v2"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/pkg/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

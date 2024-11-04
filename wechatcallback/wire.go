@@ -4,15 +4,15 @@
 package wechatcallback
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	"git.yingzhongshare.com/mkt/kitty/app/handlers"
-	app "git.yingzhongshare.com/mkt/kitty/app/module"
-	"git.yingzhongshare.com/mkt/kitty/app/repository"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	kittyhttp "git.yingzhongshare.com/mkt/kitty/pkg/khttp"
-	"git.yingzhongshare.com/mkt/kitty/pkg/ots3"
 	"github.com/go-kit/kit/log"
 	"github.com/google/wire"
+	"github.com/lingwei0604/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/handlers"
+	app "github.com/lingwei0604/kitty/app/module"
+	"github.com/lingwei0604/kitty/app/repository"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	kittyhttp "github.com/lingwei0604/kitty/pkg/khttp"
+	"github.com/lingwei0604/kitty/pkg/ots3"
 )
 
 var WechatServerSet = wire.NewSet(

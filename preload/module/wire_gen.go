@@ -7,8 +7,8 @@
 package module
 
 import (
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/preload/handlers"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/preload/handlers"
 	"github.com/go-kit/log"
 )
 

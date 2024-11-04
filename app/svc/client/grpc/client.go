@@ -14,8 +14,8 @@ import (
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 
 	// This Service
-	"git.yingzhongshare.com/mkt/kitty/app/svc"
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	"github.com/lingwei0604/kitty/app/svc"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 // app.v2

@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	kconf "git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/rule/dto"
-	repository2 "git.yingzhongshare.com/mkt/kitty/rule/repository"
+	kconf "github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/rule/dto"
+	repository2 "github.com/lingwei0604/kitty/rule/repository"
 	"github.com/stretchr/testify/assert"
 	"go.etcd.io/etcd/client/v3"
 )

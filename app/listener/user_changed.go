@@ -3,9 +3,9 @@ package listener
 import (
 	"context"
 
-	appevent "git.yingzhongshare.com/mkt/kitty/app/event"
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
-	"git.yingzhongshare.com/mkt/kitty/pkg/event"
+	appevent "github.com/lingwei0604/kitty/app/event"
+	"github.com/lingwei0604/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/event"
 )
 
 type UserBus interface {

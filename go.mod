@@ -1,4 +1,4 @@
-module git.yingzhongshare.com/mkt/kitty
+module github.com/lingwei0604/kitty
 
 go 1.19
 

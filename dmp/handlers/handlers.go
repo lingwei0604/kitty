@@ -3,7 +3,7 @@ package handlers
 import (
 	"context"
 
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
+	pb "github.com/lingwei0604/kitty/proto"
 )
 
 // NewService returns a naïve, stateless implementation of Service.

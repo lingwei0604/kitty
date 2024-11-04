@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
-	"git.yingzhongshare.com/mkt/kitty/pkg/klog"
+	"github.com/lingwei0604/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/klog"
 	"github.com/segmentio/kafka-go"
 	jaeger "github.com/uber/jaeger-client-go/config"
 )

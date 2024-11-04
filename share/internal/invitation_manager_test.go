@@ -7,11 +7,11 @@ import (
 
 	"github.com/go-kit/kit/log"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
-	code "git.yingzhongshare.com/mkt/kitty/pkg/invitecode"
-	"git.yingzhongshare.com/mkt/kitty/pkg/kjwt"
-	"git.yingzhongshare.com/mkt/kitty/share/internal/mocks"
 	"github.com/go-kit/kit/auth/jwt"
+	"github.com/lingwei0604/kitty/app/entity"
+	code "github.com/lingwei0604/kitty/pkg/invitecode"
+	"github.com/lingwei0604/kitty/pkg/kjwt"
+	"github.com/lingwei0604/kitty/share/internal/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

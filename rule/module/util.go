@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"git.yingzhongshare.com/mkt/kitty/rule/repository"
+	"github.com/lingwei0604/kitty/rule/repository"
 )
 
 // TrimPrefix removes the longest common Prefix from all provided strings

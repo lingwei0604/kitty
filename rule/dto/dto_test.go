@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	pb "git.yingzhongshare.com/mkt/kitty/proto"
 	"github.com/antonmedv/expr"
+	pb "github.com/lingwei0604/kitty/proto"
 	"github.com/stretchr/testify/assert"
 )
 

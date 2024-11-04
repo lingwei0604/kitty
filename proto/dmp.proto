@@ -3,7 +3,7 @@ syntax = "proto3";
 package pb;
 import "google/api/annotations.proto";
 
-option go_package = "git.yingzhongshare.com/mkt/kitty/proto;kitty";
+option go_package = "github.com/lingwei0604/kitty/proto;kitty";
 
 
 service Dmp{

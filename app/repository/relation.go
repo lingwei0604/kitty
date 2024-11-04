@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/entity"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
 )

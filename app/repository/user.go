@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"git.yingzhongshare.com/mkt/kitty/app/entity"
+	"github.com/lingwei0604/kitty/app/entity"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"

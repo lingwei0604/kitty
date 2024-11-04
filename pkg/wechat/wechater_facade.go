@@ -3,7 +3,7 @@ package wechat
 import (
 	"context"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/config"
+	"github.com/lingwei0604/kitty/pkg/config"
 	"github.com/pkg/errors"
 )
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"git.yingzhongshare.com/mkt/kitty/pkg/contract"
+	"github.com/lingwei0604/kitty/pkg/contract"
 	"github.com/stretchr/testify/assert"
 )
 
