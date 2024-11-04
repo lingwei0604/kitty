@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package event_hub.v1;
+option go_package = "git.yingzhongshare.com/mkt/kitty/proto;kitty";
+
+enum Platform {
+  PLATFORM_UNKNOWN = 0;
+  PLATFORM_KUAISHOU = 1;
+  PLATFORM_CHUANSHANJIA = 2;
+  PLATFORM_GUANGDIANTONG = 3;
+  PLATFORM_CHUBAO = 4;
+  PLATFORM_QUTOUTIAO = 5;
+  PLATFORM_OTHERS = 100;
+}
+
+// 29092 common-event-hub-match
+message Match {
+  string timestamp = 1;
+  string package_name = 2;
+  string event = 3;
+  int64 user_id = 4;
+  string oaid = 5;
+  string imei = 6;
+  string mac = 7;
+  string android_id = 8;
+  string suuid = 9;
+  string ip = 10;
+  string download_channel = 11;
+  int32 register_days = 12;
+  string topic = 13;
+  string click_channel = 14;
+  string cid = 15;
+  string aid = 16;
+  string campaign_id = 17;
+  string union_site = 18;
+  Platform platform = 19;
+  string version = 20;
+  string cta_channel = 21;
+}
+
+// 29092 common-event-hub-callback
+message Callback {
+  string package_name = 1;
+  string download_channel = 2;
+  string click_channel = 3;
+  string campaign_id = 4;
+  string aid = 5;
+  string cid = 6;
+  string event = 7;
+  string timestamp = 8;
+  string url = 9;
+  string user_id = 10;
+  string suuid = 11;
+  string version = 12;
+  string cta_channel = 13;
+}

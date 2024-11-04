@@ -1,0 +1,92 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "资源预加载服务v1",
+    "version": "1.0.0",
+    "contact": {
+      "name": "李太新",
+      "email": "litaixin@donews.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Preload"
+    }
+  ],
+  "basePath": "/preload/v1",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/infoList": {
+      "get": {
+        "summary": "获取 preload 预加载资源地址",
+        "operationId": "Preload_ListInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PreloadResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "preloadHostList",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "Preload"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "v1PreloadInfo": {
+      "type": "object",
+      "properties": {
+        "gzurl": {
+          "type": "string"
+        },
+        "md5": {
+          "type": "string"
+        },
+        "weburl": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PreloadResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1PreloadInfo"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "商业化中台文档",
+    "url": "http://monetization-docs.xg.tagtic.cn/#/"
+  }
+}

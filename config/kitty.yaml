@@ -1,0 +1,35 @@
+global:
+  version: 0.1.0
+  env: prod
+  level: warn
+  salt: DonewsTeaParty
+  incrKey: kitty-users-id
+  http:
+    addr: :8080
+  grpc:
+    addr: :9090
+  security:
+    enable: true
+    kid: kitty
+    key: zxcvb0997zSDvHSD
+app: &app
+  name: kitty
+  jaeger:
+    sampler:
+      type: 'ratelimiting'
+      param: 1
+    log:
+      enable: false
+rule:
+  jaeger:
+    sampler:
+      type: 'const'
+      param: 1
+    log:
+      enable: false
+  name: rule
+  etcd:
+    addrs:
+      - etcd-headless.allin:2379
+  dmpAddr:
+wechatcallback: *app

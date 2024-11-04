@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: config-backend
+  name: config-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: config-backend
+  template:
+    metadata:
+      labels:
+        app: config-backend
+    spec:
+      containers:
+        - image: ${IMAGE}
+          name: app

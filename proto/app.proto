@@ -1,0 +1,549 @@
+syntax = "proto3";
+
+package app.v2;
+
+import "google/api/annotations.proto";
+import "protoc-gen-validate/validate/validate.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "git.yingzhongshare.com/mkt/kitty/proto;kitty";
+
+option (options.openapiv2_swagger) = {
+  info: {
+    title: "商业化中台用户中心";
+    version: "2.0.0";
+    contact: {
+      name: "谷溪";
+      email: "guxi@infinities.com.cn";
+    };
+  };
+  base_path: "/app/v2"
+  security_definitions: {
+    security: {
+      key: "JWT",
+      value: {
+        type: TYPE_API_KEY
+        in: IN_HEADER
+        name: "Authorization"
+      }
+    }
+  }
+  security: {
+    security_requirement: {
+      key: "JWT";
+      value: {};
+    }
+  }
+  consumes: "application/json";
+  produces: "application/json";
+  external_docs: {
+    description: "商业化中台文档"
+    url: "http://monetization-docs.xg.tagtic.cn/#/"
+  }
+};
+
+// 用户中心
+service App {
+  // 预注册。启动时预先分配用户ID用。
+  rpc PreRegister(PreRegisterRequest) returns (PreRegisterReply) {
+    option (options.openapiv2_operation) = {
+      tags: "登录"
+    };
+    option (google.api.http) = {
+      post: "/pre-register"
+      body: "*"
+    };
+  }
+  // 用户从未登录状态注册或登录时调用。如果用户已登录，需要绑定手机号或微信号，请使用bind接口。
+  rpc Login(UserLoginRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "登录"
+    };
+    option (google.api.http) = {
+      post: "/login"
+      body: "*"
+    };
+  }
+  // 用户已登录后，绑定微信号，如已绑定则返回用户信息，否进行绑定，不会替换绑定用户只返回绑定过的用户。
+  // 本接口会返回新的token，后续请求务必请将老JWT替换为新token。
+  rpc BindWechat(BindWechatRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "Bind微信"
+    };
+    option (google.api.http) = {
+      post: "/login/wechat"
+      body: "*"
+    };
+  }
+
+  // 获得验证码
+  rpc GetCode(GetCodeRequest) returns (GenericReply) {
+    option (options.openapiv2_operation) = {
+      tags: "登录"
+    };
+    option (google.api.http) = {
+      get: "/code"
+    };
+  }
+
+  // 获取任意用户信息，填0获取本人信息
+  rpc GetInfo (UserInfoRequest) returns (UserInfoReply) {
+    option (google.api.http) = {
+      get: "/info/{id}"
+    };
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+  }
+
+  // 批量获取用户信息接口。如果一个或多个用户ID在数据库中不存在，不会报错，在返回结果中只会包含存在的数据。
+  rpc GetInfoBatch (UserInfoBatchRequest) returns (UserInfoBatchReply) {
+    option (google.api.http) = {
+      get: "/batch/info"
+    };
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+  }
+
+  // 更新个人信息
+  // 本接口会返回新的token，后续请求务必请将老JWT替换为新token。
+  rpc UpdateInfo (UserInfoUpdateRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+    option (google.api.http) = {
+      post: "/info"
+      body: "*"
+    };
+  }
+
+  // 用户已登录后，绑定额外的手机号或微信号。
+  // 本接口会返回新的token，后续请求务必请将老JWT替换为新token。
+  rpc Bind (UserBindRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+    option (google.api.http) = {
+      post: "/bind"
+      body: "*"
+    };
+  }
+
+  // 绑定买量侧广告ID
+  rpc BindAd (UserBindAdRequest) returns (GenericReply) {
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+    option (google.api.http) = {
+      post: "/bind-ad"
+      body: "*"
+    };
+  }
+
+  // 针对已登录用户，取消绑定手机或微信登录方式
+  // 本接口会返回新的token，后续请求务必请将老JWT替换为新token。
+  // 由于安全风险，该接口只能使用管理员token调用
+  rpc Unbind (UserUnbindRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+    option (google.api.http) = {
+      post: "/unbind"
+      body: "*"
+    };
+  }
+
+  // JWT Token续期，需要在每次升级系统或每次冷启动前调用，
+  // 避免jwt中的信息与实际信息不一致。本接口会返回新的JWT，
+  // 后续请求务必请将老JWT替换为新JWT。
+  rpc Refresh (UserRefreshRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "登录"
+    };
+    option (google.api.http) = {
+      post: "/refresh"
+      body: "*"
+    };
+  }
+
+  // 软删除用户接口。如果指定ID删除，需要使用专门的管理员JWT。
+  // 如果只删除当前JWT当中的用户，无需管理员权限，ID填0即可。
+  rpc SoftDelete (UserSoftDeleteRequest) returns (UserInfoReply) {
+    option (options.openapiv2_operation) = {
+      tags: "登录"
+    };
+    option (google.api.http) = {
+      delete: "/info/{id}"
+    };
+  }
+
+  // 通过设备号查询用户信息接口
+  // 需要管理员token
+  rpc DeviceLookup (DeviceLookupRequest) returns (DeviceLookupReply) {
+    option (options.openapiv2_operation) = {
+      tags: "用户信息"
+    };
+    option (google.api.http) = {
+      get: "/device"
+    };
+  }
+}
+
+message UserBindRequest {
+  // 手机号
+  string mobile = 1 [
+    (validate.rules).string.pattern = "(^$|^[\\d]{11}$)",
+    (options.openapiv2_field) = {pattern: "(^$|^[\\d]{11}$)"}
+  ];
+  // 手机验证码（配合手机号使用）
+  string code = 2;
+  // 微信官方下发的临时code码，非openId
+  string wechat = 3;
+  // 废弃，请使用wechat_extra.openId
+  string openId = 4 [deprecated = true];
+  // 绑定淘宝
+  TaobaoExtra taobao_extra = 5;
+  // 如果有openId 就直接走openId，不用再填微信官方下发的临时code码
+  WechatExtra wechat_extra = 6;
+  // 是否同步基础用户信息
+  bool mergeInfo = 7;
+}
+
+message TaobaoExtra {
+  string user_id = 1;
+  string open_sid = 2;
+  string top_access_token = 3;
+  string avatar_url = 4;
+  string havana_sso_token = 5;
+  string nick = 6;
+  string open_id = 7;
+  string top_auth_code = 8;
+  string top_expire_time = 9;
+}
+
+message WechatExtra {
+  string access_token = 1;
+  int64 expires_in = 2;
+  string refresh_token = 3;
+  string open_id = 4;
+  string scope = 5;
+  string nick_name = 6;
+  int32 sex = 7;
+  string province = 8;
+  string city = 9;
+  string country = 10;
+  string headimgurl = 11;
+  repeated string privilege = 12;
+  string unionid = 13;
+}
+
+enum Extra {
+  UNKNOWN_EXTRA = 0;
+  WECHAT_EXTRA = 1;
+  TAOBAO_EXTRA = 2;
+}
+
+// Token续期
+message UserRefreshRequest {
+  Device device = 4;
+  // 渠道号
+  string channel = 5;
+  // 版本号
+  string version_code = 6 [
+    (options.openapiv2_field) = {required: "true", pattern: "^[\\d]+$"},
+    (validate.rules).string.min_len = 4,
+    (validate.rules).string.pattern = "^[\\d]+$"
+  ];
+}
+
+message UserUnbindRequest {
+  // true则解绑手机
+  bool mobile = 1;
+  // true则解绑微信
+  bool wechat = 2;
+  // true则解绑淘宝
+  bool taobao = 3;
+  // 需要解绑的用户ID
+  int64 user_id = 4;
+  // true则取消预注册中用户和SUUID的绑定关系
+  bool suuid = 5;
+  // oaid
+  string oaid = 6;
+  // android
+  string android = 7;
+  string idfa = 8;
+}
+
+message UserLoginRequest {
+  // 手机号
+  string mobile = 1 [
+    (validate.rules).string.pattern = "(^$|^[\\d]{11}$)",
+    (options.openapiv2_field) = {pattern: "(^$|^[\\d]{11}$)"}
+  ];
+  // 手机验证码
+  string code = 2;
+  // 手机发起微信登录的token，非openid
+  string wechat = 3 [
+    (validate.rules).string = {not_contains: " "}
+  ];
+
+  Device device = 4;
+  // 渠道
+  string channel = 5;
+  // 版本号
+  string version_code = 6 [
+    (options.openapiv2_field) = {required: "true", pattern: "^[\\d]+$", description: "必须是由整数数字组成的字符串。如1000"},
+    (validate.rules).string.pattern = "^[\\d]+$"
+  ];
+  // 包名
+  string package_name = 7 [
+    (options.openapiv2_field) = {required: "true"},
+    (validate.rules).string.min_len = 1
+  ];
+  // 第三方ID
+  string third_party_id = 8;
+}
+
+message BindWechatRequest {
+  // 手机发起微信登录的token，非openid
+  string wechat = 1 [
+    (options.openapiv2_field) = {required: "true"},
+    (validate.rules).string.min_len = 1
+  ];
+
+  Device device = 2;
+  // 渠道
+  string channel = 3;
+  // 版本号
+  string version_code = 4 [
+    (options.openapiv2_field) = {required: "true", pattern: "^[\\d]+$", description: "必须是由整数数字组成的字符串。如1000"},
+    (validate.rules).string.pattern = "^[\\d]+$"
+  ];
+  // 包名
+  string package_name = 5 [
+    (options.openapiv2_field) = {required: "true"},
+    (validate.rules).string.min_len = 1
+  ];
+  // 第三方ID
+  string third_party_id = 6;
+}
+
+message Device {
+  enum OS {
+    OS_UNKNOWN = 0;
+    IOS = 1;
+    ANDROID = 2;
+  }
+  string imei = 1;
+  string idfa = 2;
+  string android_id = 3;
+  string suuid = 4;
+  // MAC 地址
+  string mac = 5;
+  // 1 苹果，2 安卓
+  OS os = 6;
+  string oaid = 7;
+  string smid = 8;
+}
+
+enum Gender {
+  GENDER_UNKNOWN = 0;
+  GENDER_MALE = 1;
+  GENDER_FEMALE = 2;
+}
+
+message UserInfo {
+  uint64 id = 1;
+  string user_name = 2;
+  string wechat = 3;
+  // 头像地址
+  string head_img = 4;
+  Gender gender = 5;
+  string birthday = 6;
+  string token = 7;
+  // 第三方ID
+  string third_party_id = 8;
+  bool is_new = 9 [(gogoproto.jsontag) = "is_new"];
+  WechatExtra wechat_extra = 10;
+  TaobaoExtra taobao_extra = 11;
+  string mobile = 12;
+  string invite_code = 13;
+  bool is_deleted = 14;
+  bool is_invited = 15;
+  // 注册时间，格式： YYYY-MM-DD hh:mm:ss
+  string created_at = 17;
+  // 注册时间的毫秒级时间戳
+  int64 created_ts = 18;
+  // 数美ID
+  string smid = 19;
+}
+
+message UserInfoDetail {
+  uint64 id = 1;
+  string user_name = 2;
+  string wechat = 3;
+  // 头像地址
+  string head_img = 4;
+  Gender gender = 5;
+  string birthday = 6;
+  string token = 7;
+  // 第三方ID
+  string third_party_id = 8;
+  bool is_new = 9 [(gogoproto.jsontag) = "is_new"];
+  WechatExtra wechat_extra = 10;
+  TaobaoExtra taobao_extra = 11;
+  string mobile = 12;
+  string invite_code = 13;
+  bool is_deleted = 14;
+  bool is_invited = 15;
+  string suuid = 16;
+  // 注册时间，格式： YYYY-MM-DD hh:mm:ss
+  string created_at = 17;
+  string channel = 18;
+  string version_code = 19;
+  string package_name = 20;
+  string smid = 21; // 数美ID
+  string oaid = 22;
+  string imei = 23;
+  string idfa = 24;
+  string ip = 25;
+  string mac = 26;
+  string android_id = 27;
+  uint32 os = 28;
+  string campaign_id = 29;
+  string aid = 30;
+  string cid = 31;
+  string cta_channel = 32;
+}
+
+message UserInfoReply {
+  int32 code = 1 [(gogoproto.jsontag) = "code"];
+  // deprecated
+  string message = 2;
+  UserInfo data = 3;
+  string msg = 4;
+}
+
+message UserInfoBatchReply {
+  int32 code = 1 [(gogoproto.jsontag) = "code"];
+  repeated UserInfoDetail data = 3;
+  string msg = 4;
+  int64 count = 5;
+}
+
+
+message GetCodeRequest {
+  string mobile = 1 [
+    (options.openapiv2_field) = {required: "true", pattern: "\\d{11}"},
+    (validate.rules).string = {pattern: "\\d{11}"}
+  ];
+  string packageName = 2;
+}
+
+message UserInfoBatchRequest {
+  repeated uint64 id = 1;
+  repeated string invite_code = 2;
+  string packageName = 4;
+  int64 after = 5;
+  int64 before = 6;
+  string mobile = 7;
+  string name = 8;
+  int32 perPage = 9; // 每页返回记录数
+  int32 page = 10; // 页码。从1开始。
+}
+
+message UserInfoRequest {
+  uint64 id = 1;
+  // 同时获得微信相关信息
+  bool wechat = 2;
+  // 同时获得淘宝相关信息
+  bool taobao = 3;
+}
+
+message UserInfoUpdateRequest {
+  // 用户名
+  string user_name = 2 [
+    (options.openapiv2_field).minimum = 2,
+    (options.openapiv2_field).maximum = 10,
+    (validate.rules).string = {max_len: 10}
+  ];
+  // 头像地址
+  string head_img = 4 [
+    (options.openapiv2_field) = {pattern: "^(|https?://.*)$"},
+    (validate.rules).string = {pattern: "^(|https?://.*)$"}
+  ];
+  // 性别
+  Gender gender = 5;
+  // 生日
+  string birthday = 6 [
+    (options.openapiv2_field) = {pattern: "^(|\\d{4}-\\d{1,2}-\\d{1,2})$"},
+    (validate.rules).string = {pattern: "^(|\\d{4}-\\d{1,2}-\\d{1,2})$"}
+  ];
+  // 第三方ID
+  string third_party_id = 7;
+}
+
+message EmptyRequest {
+}
+
+message GenericReply {
+  int32 code = 1 [(gogoproto.jsontag) = "code"];
+  // deprecated
+  string message = 2;
+  string msg = 3;
+}
+
+message UserSoftDeleteRequest {
+  uint64 id = 1;
+}
+
+message UserBindAdRequest {
+  uint64 id = 1;
+  string campaign_id = 2;
+  string cid = 3;
+  string aid = 4;
+  string suuid = 5;
+  string click_channel = 6;
+  string download_channel = 7;
+  string union_site = 8;
+  string bind_time = 9;
+  string package_name = 10;
+  string os = 11;
+  string cta_channel = 12;
+  string platform = 13;
+}
+
+message DeviceLookupRequest {
+  string oaid = 1;
+  string imei = 2;
+  string package_name = 3 [
+    (options.openapiv2_field) = {required: "true"},
+    (validate.rules).string.min_len = 1
+  ];
+}
+
+message DeviceLookupReply {
+  int32 code = 1 [(gogoproto.jsontag) = "code"];
+  string msg = 2;
+  repeated UserInfo data = 3;
+}
+
+message PreRegisterRequest {
+  string oaid = 1;
+  string imei = 2;
+  string suuid = 3;
+  string mac = 4;
+  string android_id = 5;
+  string idfa = 6;
+  string package_name = 7;
+  uint64 user_id = 8;
+}
+
+message PreRegisterReply {
+  int32 code = 1 [(gogoproto.jsontag) = "code"];
+  string msg = 2;
+  uint64 user_id = 3;
+  int64 register_time = 4;
+}

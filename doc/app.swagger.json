@@ -1,0 +1,1166 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "商业化中台用户中心",
+    "version": "2.0.0",
+    "contact": {
+      "name": "谷溪",
+      "email": "guxi@infinities.com.cn"
+    }
+  },
+  "tags": [
+    {
+      "name": "App"
+    }
+  ],
+  "basePath": "/app/v2",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/batch/info": {
+      "get": {
+        "summary": "批量获取用户信息接口。如果一个或多个用户ID在数据库中不存在，不会报错，在返回结果中只会包含存在的数据。",
+        "operationId": "App_GetInfoBatch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoBatchReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "invite_code",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "packageName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "mobile",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    },
+    "/bind": {
+      "post": {
+        "summary": "用户已登录后，绑定额外的手机号或微信号。\n本接口会返回新的token，后续请求务必请将老JWT替换为新token。",
+        "operationId": "App_Bind",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserBindRequest"
+            }
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    },
+    "/bind-ad": {
+      "post": {
+        "summary": "绑定买量侧广告ID",
+        "operationId": "App_BindAd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GenericReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserBindAdRequest"
+            }
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    },
+    "/code": {
+      "get": {
+        "summary": "获得验证码",
+        "operationId": "App_GetCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2GenericReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mobile",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "packageName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "登录"
+        ]
+      }
+    },
+    "/device": {
+      "get": {
+        "summary": "通过设备号查询用户信息接口\n需要管理员token",
+        "operationId": "App_DeviceLookup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2DeviceLookupReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "oaid",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "imei",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "package_name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    },
+    "/info": {
+      "post": {
+        "summary": "更新个人信息\n本接口会返回新的token，后续请求务必请将老JWT替换为新token。",
+        "operationId": "App_UpdateInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    },
+    "/info/{id}": {
+      "get": {
+        "summary": "获取任意用户信息，填0获取本人信息",
+        "operationId": "App_GetInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "wechat",
+            "description": "同时获得微信相关信息.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "taobao",
+            "description": "同时获得淘宝相关信息.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      },
+      "delete": {
+        "summary": "软删除用户接口。如果指定ID删除，需要使用专门的管理员JWT。\n如果只删除当前JWT当中的用户，无需管理员权限，ID填0即可。",
+        "operationId": "App_SoftDelete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          }
+        ],
+        "tags": [
+          "登录"
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "用户从未登录状态注册或登录时调用。如果用户已登录，需要绑定手机号或微信号，请使用bind接口。",
+        "operationId": "App_Login",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserLoginRequest"
+            }
+          }
+        ],
+        "tags": [
+          "登录"
+        ]
+      }
+    },
+    "/login/wechat": {
+      "post": {
+        "summary": "用户已登录后，绑定微信号，如已绑定则返回用户信息，否进行绑定，不会替换绑定用户只返回绑定过的用户。\n本接口会返回新的token，后续请求务必请将老JWT替换为新token。",
+        "operationId": "App_BindWechat",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2BindWechatRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Bind微信"
+        ]
+      }
+    },
+    "/pre-register": {
+      "post": {
+        "summary": "预注册。启动时预先分配用户ID用。",
+        "operationId": "App_PreRegister",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2PreRegisterReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2PreRegisterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "登录"
+        ]
+      }
+    },
+    "/refresh": {
+      "post": {
+        "summary": "JWT Token续期，需要在每次升级系统或每次冷启动前调用，\n避免jwt中的信息与实际信息不一致。本接口会返回新的JWT，\n后续请求务必请将老JWT替换为新JWT。",
+        "operationId": "App_Refresh",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserRefreshRequest"
+            }
+          }
+        ],
+        "tags": [
+          "登录"
+        ]
+      }
+    },
+    "/unbind": {
+      "post": {
+        "summary": "针对已登录用户，取消绑定手机或微信登录方式\n本接口会返回新的token，后续请求务必请将老JWT替换为新token。\n由于安全风险，该接口只能使用管理员token调用",
+        "operationId": "App_Unbind",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2UserInfoReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2UserUnbindRequest"
+            }
+          }
+        ],
+        "tags": [
+          "用户信息"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "DeviceOS": {
+      "type": "string",
+      "enum": [
+        "OS_UNKNOWN",
+        "IOS",
+        "ANDROID"
+      ],
+      "default": "OS_UNKNOWN"
+    },
+    "v2BindWechatRequest": {
+      "type": "object",
+      "properties": {
+        "wechat": {
+          "type": "string",
+          "title": "手机发起微信登录的token，非openid",
+          "required": [
+            "true"
+          ]
+        },
+        "device": {
+          "$ref": "#/definitions/v2Device"
+        },
+        "channel": {
+          "type": "string",
+          "title": "渠道"
+        },
+        "version_code": {
+          "type": "string",
+          "description": "必须是由整数数字组成的字符串。如1000",
+          "title": "版本号",
+          "pattern": "^[\\d]+$",
+          "required": [
+            "true"
+          ]
+        },
+        "package_name": {
+          "type": "string",
+          "title": "包名",
+          "required": [
+            "true"
+          ]
+        },
+        "third_party_id": {
+          "type": "string",
+          "title": "第三方ID"
+        }
+      },
+      "required": [
+        "true",
+        "true",
+        "true"
+      ]
+    },
+    "v2Device": {
+      "type": "object",
+      "properties": {
+        "imei": {
+          "type": "string"
+        },
+        "idfa": {
+          "type": "string"
+        },
+        "android_id": {
+          "type": "string"
+        },
+        "suuid": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string",
+          "title": "MAC 地址"
+        },
+        "os": {
+          "$ref": "#/definitions/DeviceOS",
+          "title": "1 苹果，2 安卓"
+        },
+        "oaid": {
+          "type": "string"
+        },
+        "smid": {
+          "type": "string"
+        }
+      }
+    },
+    "v2DeviceLookupReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2UserInfo"
+          }
+        }
+      }
+    },
+    "v2Gender": {
+      "type": "string",
+      "enum": [
+        "GENDER_UNKNOWN",
+        "GENDER_MALE",
+        "GENDER_FEMALE"
+      ],
+      "default": "GENDER_UNKNOWN"
+    },
+    "v2GenericReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string",
+          "title": "deprecated"
+        },
+        "msg": {
+          "type": "string"
+        }
+      }
+    },
+    "v2PreRegisterReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "register_time": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v2PreRegisterRequest": {
+      "type": "object",
+      "properties": {
+        "oaid": {
+          "type": "string"
+        },
+        "imei": {
+          "type": "string"
+        },
+        "suuid": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string"
+        },
+        "android_id": {
+          "type": "string"
+        },
+        "idfa": {
+          "type": "string"
+        },
+        "package_name": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "v2TaobaoExtra": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "open_sid": {
+          "type": "string"
+        },
+        "top_access_token": {
+          "type": "string"
+        },
+        "avatar_url": {
+          "type": "string"
+        },
+        "havana_sso_token": {
+          "type": "string"
+        },
+        "nick": {
+          "type": "string"
+        },
+        "open_id": {
+          "type": "string"
+        },
+        "top_auth_code": {
+          "type": "string"
+        },
+        "top_expire_time": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UserBindAdRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "campaign_id": {
+          "type": "string"
+        },
+        "cid": {
+          "type": "string"
+        },
+        "aid": {
+          "type": "string"
+        },
+        "suuid": {
+          "type": "string"
+        },
+        "click_channel": {
+          "type": "string"
+        },
+        "download_channel": {
+          "type": "string"
+        },
+        "union_site": {
+          "type": "string"
+        },
+        "bind_time": {
+          "type": "string"
+        },
+        "package_name": {
+          "type": "string"
+        },
+        "os": {
+          "type": "string"
+        },
+        "cta_channel": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UserBindRequest": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "string",
+          "title": "手机号",
+          "pattern": "(^$|^[\\d]{11}$)"
+        },
+        "code": {
+          "type": "string",
+          "title": "手机验证码（配合手机号使用）"
+        },
+        "wechat": {
+          "type": "string",
+          "title": "微信官方下发的临时code码，非openId"
+        },
+        "openId": {
+          "type": "string",
+          "title": "废弃，请使用wechat_extra.openId"
+        },
+        "taobao_extra": {
+          "$ref": "#/definitions/v2TaobaoExtra",
+          "title": "绑定淘宝"
+        },
+        "wechat_extra": {
+          "$ref": "#/definitions/v2WechatExtra",
+          "title": "如果有openId 就直接走openId，不用再填微信官方下发的临时code码"
+        },
+        "mergeInfo": {
+          "type": "boolean",
+          "title": "是否同步基础用户信息"
+        }
+      }
+    },
+    "v2UserInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "wechat": {
+          "type": "string"
+        },
+        "head_img": {
+          "type": "string",
+          "title": "头像地址"
+        },
+        "gender": {
+          "$ref": "#/definitions/v2Gender"
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "third_party_id": {
+          "type": "string",
+          "title": "第三方ID"
+        },
+        "is_new": {
+          "type": "boolean"
+        },
+        "wechat_extra": {
+          "$ref": "#/definitions/v2WechatExtra"
+        },
+        "taobao_extra": {
+          "$ref": "#/definitions/v2TaobaoExtra"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "invite_code": {
+          "type": "string"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "is_invited": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "title": "注册时间，格式： YYYY-MM-DD hh:mm:ss"
+        },
+        "created_ts": {
+          "type": "string",
+          "format": "int64",
+          "title": "注册时间的毫秒级时间戳"
+        },
+        "smid": {
+          "type": "string",
+          "title": "数美ID"
+        }
+      }
+    },
+    "v2UserInfoBatchReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2UserInfoDetail"
+          }
+        },
+        "msg": {
+          "type": "string"
+        },
+        "count": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v2UserInfoDetail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "wechat": {
+          "type": "string"
+        },
+        "head_img": {
+          "type": "string",
+          "title": "头像地址"
+        },
+        "gender": {
+          "$ref": "#/definitions/v2Gender"
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "third_party_id": {
+          "type": "string",
+          "title": "第三方ID"
+        },
+        "is_new": {
+          "type": "boolean"
+        },
+        "wechat_extra": {
+          "$ref": "#/definitions/v2WechatExtra"
+        },
+        "taobao_extra": {
+          "$ref": "#/definitions/v2TaobaoExtra"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "invite_code": {
+          "type": "string"
+        },
+        "is_deleted": {
+          "type": "boolean"
+        },
+        "is_invited": {
+          "type": "boolean"
+        },
+        "suuid": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "title": "注册时间，格式： YYYY-MM-DD hh:mm:ss"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "version_code": {
+          "type": "string"
+        },
+        "package_name": {
+          "type": "string"
+        },
+        "smid": {
+          "type": "string"
+        },
+        "oaid": {
+          "type": "string"
+        },
+        "imei": {
+          "type": "string"
+        },
+        "idfa": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string"
+        },
+        "android_id": {
+          "type": "string"
+        },
+        "os": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "campaign_id": {
+          "type": "string"
+        },
+        "aid": {
+          "type": "string"
+        },
+        "cid": {
+          "type": "string"
+        },
+        "cta_channel": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UserInfoReply": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string",
+          "title": "deprecated"
+        },
+        "data": {
+          "$ref": "#/definitions/v2UserInfo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      }
+    },
+    "v2UserInfoUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "user_name": {
+          "type": "string",
+          "title": "用户名",
+          "maximum": 10,
+          "minimum": 2
+        },
+        "head_img": {
+          "type": "string",
+          "title": "头像地址",
+          "pattern": "^(|https?://.*)$"
+        },
+        "gender": {
+          "$ref": "#/definitions/v2Gender",
+          "title": "性别"
+        },
+        "birthday": {
+          "type": "string",
+          "title": "生日",
+          "pattern": "^(|\\d{4}-\\d{1,2}-\\d{1,2})$"
+        },
+        "third_party_id": {
+          "type": "string",
+          "title": "第三方ID"
+        }
+      }
+    },
+    "v2UserLoginRequest": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "string",
+          "title": "手机号",
+          "pattern": "(^$|^[\\d]{11}$)"
+        },
+        "code": {
+          "type": "string",
+          "title": "手机验证码"
+        },
+        "wechat": {
+          "type": "string",
+          "title": "手机发起微信登录的token，非openid"
+        },
+        "device": {
+          "$ref": "#/definitions/v2Device"
+        },
+        "channel": {
+          "type": "string",
+          "title": "渠道"
+        },
+        "version_code": {
+          "type": "string",
+          "description": "必须是由整数数字组成的字符串。如1000",
+          "title": "版本号",
+          "pattern": "^[\\d]+$",
+          "required": [
+            "true"
+          ]
+        },
+        "package_name": {
+          "type": "string",
+          "title": "包名",
+          "required": [
+            "true"
+          ]
+        },
+        "third_party_id": {
+          "type": "string",
+          "title": "第三方ID"
+        }
+      },
+      "required": [
+        "true",
+        "true"
+      ]
+    },
+    "v2UserRefreshRequest": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "$ref": "#/definitions/v2Device"
+        },
+        "channel": {
+          "type": "string",
+          "title": "渠道号"
+        },
+        "version_code": {
+          "type": "string",
+          "title": "版本号",
+          "pattern": "^[\\d]+$",
+          "required": [
+            "true"
+          ]
+        }
+      },
+      "title": "Token续期",
+      "required": [
+        "true"
+      ]
+    },
+    "v2UserUnbindRequest": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "boolean",
+          "title": "true则解绑手机"
+        },
+        "wechat": {
+          "type": "boolean",
+          "title": "true则解绑微信"
+        },
+        "taobao": {
+          "type": "boolean",
+          "title": "true则解绑淘宝"
+        },
+        "user_id": {
+          "type": "string",
+          "format": "int64",
+          "title": "需要解绑的用户ID"
+        },
+        "suuid": {
+          "type": "boolean",
+          "title": "true则取消预注册中用户和SUUID的绑定关系"
+        },
+        "oaid": {
+          "type": "string",
+          "title": "oaid"
+        },
+        "android": {
+          "type": "string",
+          "title": "android"
+        },
+        "idfa": {
+          "type": "string"
+        }
+      }
+    },
+    "v2WechatExtra": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "expires_in": {
+          "type": "string",
+          "format": "int64"
+        },
+        "refresh_token": {
+          "type": "string"
+        },
+        "open_id": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "nick_name": {
+          "type": "string"
+        },
+        "sex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "province": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "headimgurl": {
+          "type": "string"
+        },
+        "privilege": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unionid": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ],
+  "externalDocs": {
+    "description": "商业化中台文档",
+    "url": "http://monetization-docs.xg.tagtic.cn/#/"
+  }
+}

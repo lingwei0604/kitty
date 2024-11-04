@@ -1,0 +1,183 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "dmp.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Dmp"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/dmp": {
+      "post": {
+        "operationId": "Dmp_UserMore",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbDmpResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pbDmpReq"
+            }
+          }
+        ],
+        "tags": [
+          "Dmp"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "DmpRespBlackType": {
+      "type": "string",
+      "enum": [
+        "WHITE",
+        "BLACK"
+      ],
+      "default": "WHITE"
+    },
+    "SkyNetRiskLevel": {
+      "type": "string",
+      "enum": [
+        "RiskLevelUnknown",
+        "RiskLevelPass",
+        "RiskLevelReview",
+        "RiskLevelReject"
+      ],
+      "default": "RiskLevelUnknown"
+    },
+    "pbDmpReq": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "package_name": {
+          "type": "string"
+        },
+        "suuid": {
+          "type": "string"
+        },
+        "channel": {
+          "type": "string"
+        }
+      }
+    },
+    "pbDmpResp": {
+      "type": "object",
+      "properties": {
+        "ad_click": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_complete": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_display": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_ctr_dev": {
+          "type": "number",
+          "format": "float"
+        },
+        "register": {
+          "type": "string"
+        },
+        "score": {
+          "type": "string",
+          "format": "int64"
+        },
+        "score_total": {
+          "type": "string",
+          "format": "int64"
+        },
+        "black_type": {
+          "$ref": "#/definitions/DmpRespBlackType"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "skynet": {
+          "$ref": "#/definitions/pbSkyNet"
+        },
+        "ad_splash_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_feed_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_banner_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_interstitial_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_rewarded_video_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_full_screen_video_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_draw_imp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "ad_interstitial_full_screen_imp": {
+          "type": "string",
+          "format": "uint64"
+        }
+      }
+    },
+    "pbSkyNet": {
+      "type": "object",
+      "properties": {
+        "register": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "login": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "fission": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "browse": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "task": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "withdraw": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        },
+        "level": {
+          "$ref": "#/definitions/SkyNetRiskLevel"
+        }
+      }
+    }
+  }
+}
